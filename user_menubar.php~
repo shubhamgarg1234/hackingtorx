@@ -1,0 +1,20 @@
+	<?php
+	?>
+
+   <!-- menubar -->
+   <b>
+   <div id="menubar">&nbsp
+   	<span style="float:right">
+	Welcome <a href="user_index.php" style="color:red" > <?php echo $_SESSION['username']; ?> </a> <br /> 
+	score <?php echo $_SESSION['score'] ?>| rank <?php echo $_SESSION['rank'] ?>	
+	</span><br />
+   <hr>
+   <a href="user_index.php"> Home </a> | <a href="#" > Levels </a> | <a href="#" > Article </a> | <a href="#" > Message </a> | <a href="#" > Help </a>
+	<span style="float:right;padding-right:3%;"><a href="logout.php">Logout </a></span>
+   <hr>  
+   </b>
+   </div>
+   
+   
+   
+   

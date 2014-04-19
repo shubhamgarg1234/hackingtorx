@@ -1,0 +1,14 @@
+<?php
+echo $_POST['6_letters_code'] ;
+//echo $_SESSION['6_letters_code'] ;
+if(strcasecmp($_SESSION['6_letters_code'], $_POST['6_letters_code']) == 0)
+{
+	echo "captcha code matched" ;
+	
+}
+else 
+{
+	echo "captcha code do not matches" ;
+}
+
+?>

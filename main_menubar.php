@@ -1,0 +1,11 @@
+<?php
+?>
+    <!-- menubar -->
+   <b>
+   <div id="menubar">&nbsp
+   <hr>
+   <a href="index.php"> Home </a> | <a href="contactus.php"><span style="word-spacing:2px"> Contact us </span></a> | <a href="#" > Article </a> | <a href="#" > Message </a> | <a href="#" > Help </a>
+   <hr>  
+   </b>
+   </div>
+

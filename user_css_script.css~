@@ -1,0 +1,22 @@
+body
+{
+margin-left: auto ; 
+margin-right: auto ;
+width: 960px ;
+background-color: black;
+color: white;
+}
+
+div#header 
+{ 
+height: 15% ;
+margin-top: 2% ;
+}
+div#menubar { height: 2% ; margin-top: 1% ; font-size: 16px ; word-spacing: 10px; }
+div#leftbar { height: 600px ; margin-top: 2% ; font-size:  14px ;float: left; width: 20% ;padding-left: 2% ;}
+div#rightbar { height: 600px ; margin-top: 2% ; font-size: 14px ;float: right; width:  20% ;padding-right: 2% ; }
+div#center { height:600px ; width: 25% ; margin-left: 35% ;margin-right: 35% ; margin-top: 2% ;font-size: 12px ; }
+div#footer { height: 90px ; color: white; margin-top: 10px ; font-size: 12px ;}
+<!-- a {color: #eeeeee ;text-decoration: none}
+a:hover { color: red; font-weight: bold; }
+-->

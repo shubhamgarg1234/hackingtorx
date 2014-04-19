@@ -1,0 +1,64 @@
+<?php
+
+session_start();
+
+if(isset($_POST['submit']))
+{
+   if(empty($_SESSION['6_letters_code'] ) ||
+	  strcasecmp($_SESSION['6_letters_code'], $_POST['6_letters_code']) != 0)
+	{
+	//Note: the captcha code is compared case insensitively.
+	//if you want case sensitive match, update the check above to
+	// strcmp()
+		echo "captcha code doesnot matches" ;
+	}
+	else
+	{
+		//send the email
+		//$to = $your_email;
+		//$subject="New form submission";
+		//$from = $your_email;
+		//$ip = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '';
+		
+		//$body = "A user  $name submitted the contact form:\n".
+		//"Name: $name\n".
+		//"Email: $visitor_email \n".
+		/*"Message: \n ".
+		"$user_message\n".
+		"IP: $ip\n";	
+		
+		$headers = "From: $from \r\n";
+		$headers .= "Reply-To: $visitor_email \r\n";
+		
+		mail($to, $subject, $body,$headers);
+		*/
+		header('Location: thank-you.html');
+	}
+
+}
+
+?>
+<html>
+<head>
+<script language='JavaScript' type='text/javascript'>
+function refreshCaptcha()
+{
+	var img = document.images['captchaimg'];
+	img.src = img.src.substring(0,img.src.lastIndexOf("?"))+"?rand="+Math.random()*1000;
+}
+</script>
+</head>
+
+<body>
+<form method="POST" name="contact_form" 
+action="check.php">
+<p>
+<img src="captcha_code_file.php?rand=<?php echo rand(); ?>" id='captchaimg' ><br>
+<label for='message'>Enter the code above here :</label><br>
+<input id="6_letters_code" name="6_letters_code" type="text"><br>
+<small>Can't read the image? click <a href='javascript: refreshCaptcha();'>here</a> to refresh</small>
+</p>
+<input type="submit" value="Submit" name='submit'>
+</form>
+</body>
+</html>

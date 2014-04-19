@@ -1,0 +1,34 @@
+<?php 
+session_start();
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>check captcha</title>
+<meta name="generator" content="Bluefish 2.0.1" >
+<meta name="author" content="shubham" >
+</head>
+<body>
+<?php
+if(!empty($errors)){
+echo "<p class='err'>".nl2br($errors)."</p>";
+}
+?>
+<form action="checkcode.php" method="post">
+<img src="captcha_code_file.php?rand=<?php echo rand(); ?>" id='captchaimg' ><br>
+<?php  echo $_SESSION['6_letters_code'] ;?>
+<label for='message'>Enter the code above here :</label><br>
+<input id="6_letters_code" name="6_letters_code" type="text"><br>
+<small>Can't read the image? click <a href='javascript: refreshCaptcha();'>here</a> to refresh</small>
+</p>
+<input type="submit" name="submit" value="submit" size="10" />matches
+</form>
+<script language='JavaScript' type='text/javascript'>
+function refreshCaptcha()
+{
+	var img = document.images['captchaimg'];
+	img.src = img.src.substring(0,img.src.lastIndexOf("?"))+"?rand="+Math.random()*1000;
+}
+</script>
+</body>
+</html>
